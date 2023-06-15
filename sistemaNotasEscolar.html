@@ -12,21 +12,22 @@
       let num1 = parseInt(document.getElementById("num1").value);
       let num2 = parseInt(document.getElementById("num2").value);
       let num3 = parseInt(document.getElementById("num3").value);
+      let smallerNum = Math.min(num1, num2, num3);
 
       let media = (num1 + num2 + num3) / 3;
 
       if (media < 7) {
         let newNum = parseInt(prompt("Aluno está em recuperação. Informe nota da recuperação:"));
 
-        if (newNum < num1) {
-          num1 = newNum;
-        } else if (newNum < num2) {
-          num2 = newNum;
-        } else if (newNum < num3) {
-          num3 = newNum;
+
+        if (smallerNum == num1) {
+          media = (newNum + num2 + num3) / 3;
+        } else if (smallerNum == num2) {
+          media = (newNum + num1 + num3) / 3;
+        } else if (smallerNum == num3) {
+          media = (newNum + num2 + num1) / 3;
         }
 
-        media = (num1 + num2 + num3) / 3;
       }
 
       if (media < 7) {
