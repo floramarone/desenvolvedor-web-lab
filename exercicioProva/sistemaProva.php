@@ -168,7 +168,7 @@ function startExam() {
         var totalQuestions = questions.length;
         var score = (correctCount / totalQuestions) * 10;
         var resultMessage = "Você acertou " + correctCount + " questões e errou " + wrongCount + " questões.\n\n";
-        if (score > 7) {
+        if (score >= 7) {
             resultMessage += "Você foi aprovado com uma nota de " + score.toFixed(2) + "!";
         } else {
             resultMessage += "Você foi reprovado com uma nota de " + score.toFixed(2) + ".\n\nRespostas corretas:\n";
